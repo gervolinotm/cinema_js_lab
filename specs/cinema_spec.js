@@ -45,9 +45,24 @@ describe('Cinema', function () {
     assert.deepStrictEqual(actual, filmArray);
   });
 
-  it('should be able to check whether there are some films from a particular year');
-  it('should be able to check whether there are no films from a particular year');
-  it('should be able to check whether all films are over a particular length');
-  it('should be able to calculate total running time of all films');
+  it('should be able to check whether there are some films from a particular year', function(){
+    const actual = cinema.checkYear(2017);
+    assert.strictEqual(actual, true)
+  });
+
+  it('should be able to check whether there are no films from a particular year', function(){
+    const actual = cinema.checkYear(2002);
+    assert.strictEqual(actual, false)
+  });
+
+  it('should be able to check whether all films are over a particular length', function(){
+    const actual = cinema.checkLength(90);
+    assert.strictEqual(actual, true);
+  });
+
+  it('should be able to calculate total running time of all films', function(){
+    const actual = cinema.totalLength();
+    assert.strictEqual(actual, 622);
+  });
 
 });
