@@ -14,13 +14,13 @@ Cinema.prototype.findFilmByTitle = function (filmTitle){
   return result;
 }
 
-Cinema.prototype.filterFilmsByGenre = function(genre){
-  const result = this.films.filter(film => film.genre === genre);
+Cinema.prototype.filterFilmsByProperty = function(key, value){
+  const result = this.films.filter(film => film[key] === value);
   return result;
 }
 
-Cinema.prototype.checkYear = function(year){
-  let yearsArray = this.films.map(film => film.year);
+Cinema.prototype.checkYear = function( year){
+  let yearsArray = this.films.map(film => film.year)
   let result = yearsArray.includes(year);
   return result;
 }
